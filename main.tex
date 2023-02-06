@@ -1,4 +1,4 @@
-\documentclass[dvipdfmx]{jsarticle}
+\documentclass[dvipdfmx]{jsreport}
 
 
 \usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
@@ -41,18 +41,18 @@
 \tableofcontents
 
 \clearpage
-\section{序論}
-\subsection{研究背景}
-\subsubsection{レーザー冷却}
+\chapter{序論}
+\section{研究背景}
+\subsection{レーザー冷却}
 レーザー冷却技術の発展は、量子力学レベルでの原子の制御を可能にし、極低温における物理を進展させている。1995年にはアインシュタインによって予言されていた極低温現象であるボース・アインシュタイン凝縮(BEC)が観測され、2001年のノーベル物理学賞の対象となった。\cite{bose}極低温で観測される原子間の新たな弱い結合メカニズムは科学の一分野として注目されており、Feshbach共鳴\cite{fesh}、Efimov状態\cite{efimov}などに加え、極低温分子の生成・応用も進んでいる。例えば、2019年には極低温分子を用いた精密分光による電子と陽子の質量比の恒常性実験が行われ、精度がそれまでの5倍程更新された。\cite{kobayashi}本研究室ではRb原子を用いた研究を立ち上げており、昨年は光格子と呼ばれるレーザー光の定在波から形成される周期的なポテンシャル中に原子をトラップし、ラマンサイドバンド冷却と圧縮を繰り返すことで高速なBECの実現を目指す実験が行われた。\cite{okuda}効率的で高速なBECの実現、そこから極低温分子の生成、精密分光実験を目指している。
 
-\subsubsection{Rydberg原子}
+\subsection{Rydberg原子}
 以上のような極低温現象の探究と並行して、Rydberg原子もまた、レーザー冷却の応用として注目されている。Rydberg原子は、Rydberg状態と呼ばれる価電子が高い主量子数状態（通常、$n=10\sim200$程度）に励起された、軌道半径が大きい中性原子である。最外殻電子は基底状態の原子と比較して$100\sim1000$倍も原子の中心から離れているため、分極性が向上している\cite{rydberg}。これはまた、誘導双極子モーメントの増加や強い長距離双極子-双極子相互作用にもつながる。
 
 Rydberg原子の顕著な特徴の一つに、Rydberg blockadeと呼ばれる効果がある。これは、隣接するRydberg原子との相互作用により、原子のRydberg準位がレーザーに対して共鳴しないようにシフトされ、一定の体積中でRydberg励起される原子は一つだけになるという現象である。Rydberg blockadeは、レーザーによる冷却・トラップ技術と併せて量子コンピュータの実現に向けた研究などに応用されている。\cite{yuma}
 
 また、イオンとRydberg原子間の新たな分子結合\cite{ion-rydberg}や、数十mV/cm程度の電場によってRydberg原子がイオン化されること(field ionization)を利用したRydberg分光\cite{yuma}など、我々の研究室のテーマである極低温分子の生成、精密分光とも相性の良い分野であると言える。
-\subsection{目的}
+\section{目的}
 本研究室ではRydberg原子を、field ionizaitonを利用した原子の高感度検出に利用することを考えている。field ionizationに必要な電場は、
 \begin{equation}
     F_{\text{ioniz.}} = \frac{F_0}{16 {n^*}^4}
@@ -62,8 +62,8 @@ Rydberg原子の顕著な特徴の一つに、Rydberg blockadeと呼ばれる効
 本研究では、Rb原子をRydberg励起するためのレーザーシステムの開発を目的とした。周波数調整可能な光源を2種類用意し、一方を基底状態から中間状態への励起、もう一方を中間状態からRydberg状態への励起に使用する。これらのレーザーの周波数を、原子の共鳴周波数や理論によって求める値に安定化させることで、別の実験系にRydberg励起用の光を提供できるようにする。また、実際にRydberg励起が起きていることを本システムの中で確認できるようにするために、三準位系と光の相互作用に特有の現象である電磁誘起透明化信号を観測できるようにする。さらに、電磁誘起透明化信号が観測できる範囲で、可能な限り大きな主量子数へのRydberg励起を目指した。
 
 \clearpage
-\section{原理}
-\subsection{Rydberg励起に必要なレーザー}
+\chapter{原理}
+\section{Rydberg励起に必要なレーザー}
 \label{sec:rydberg}
 Rydberg準位に原子を励起するために、適切な波長（周波数）のレーザーを用意する必要がある。水素原子のエネルギー準位（ポテンシャルエネルギー）は、非相対論的近似において、
 \begin{equation}
@@ -138,9 +138,9 @@ k_e &= k_{\text{lim}} - k_n \\
 本実験では、二つの外部共振器型半導体レーザー(ECDL)を用いて、中間準位$6P_{3/2}$を経由したRydberg励起を目指した。ここまでの式より、$5S_{1/2}$から$6P_{3/2}$への励起に必要な波長は$420.2989073(\pm 1766)\text{nm}\; \left(= 713.2839338(\pm 2998)\text{THz} \right)$、$6P_{3/2}$から$30D_{5/2}$への励起に必要な波長は$1024.091256(\pm 2104)\text{nm}\; \left(= 292.739984(\pm 6012)\text{THz} \right)$である。したがって、本論文では中間準位への励起に用いた波長420nm付近のレーザーをECDL1、Rydberg状態への励起に用いた波長1024nm付近のレーザーをECDL2と呼ぶ。
 
 \clearpage
-\subsection{飽和吸収分光（Saturated Absorption Spectroscopy）}
+\section{飽和吸収分光（Saturated Absorption Spectroscopy）}
 ここでは、ECDL1をRbの共鳴周波数に安定化するために用いた、飽和吸収分光とその応用である変調移行分光の原理を説明する。
-\subsubsection{ドップラー吸収}
+\subsection{ドップラー吸収}
 レーザー光が進む方向を$x$軸とする。$x$方向に速度$v$で運動する原子から見ると、レーザー周波数$\omega$はドップラー効果によって次のように変化する。
 
 \begin{equation}
@@ -182,18 +182,18 @@ k_e &= k_{\text{lim}} - k_n \\
 
 $u$は速度分布の中央の速度であり、原子の質量と温度に依存する。Rbの時、$\Delta\omega_D/\omega_0 = 1.37\times10^{-5}$程度である。すなわち、半値全幅$\Delta\omega_D\simeq\text{9.78GHz}$である。詳細な導出は\cite{foot}を参照されたい。超微細構造によるスペクトルの分岐は数十MHzから数GHz程度であるため、ドップラー幅に埋もれてしまう。これを回避する手段の一つが、飽和吸収分光である。
 
-\subsubsection{飽和吸収分光}
+\subsection{飽和吸収分光}
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{images/sas.png}
+\includegraphics[width=0.6\textwidth]{images/sas.png}
 \caption{\label{fig:sas}飽和吸収分光の概要}
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{images/sas_graph.png}
+\includegraphics[width=0.6\textwidth]{images/sas_graph.png}
 \caption{\label{fig:sas-graph}pump光とprobe光を吸収する原子が重なり、ラムディップができる}
 \end{figure}
-飽和吸収分光の概要を図\ref{fig:sas}に示す。レーザー光を偏光ビームスプリッタ（以下、PBS)によって強い光(pump)と弱い光(probe)に分け、原子のガスセル内で重ね合わせるようにしてprobe光を観測する。pump光の強度$I$は、飽和強度$I_{sat}$程度であるとする。
+飽和吸収分光の概要を図\ref{fig:sas}に示す。偏光ビームスプリッタ（以下、PBS)によってレーザー光を強い光(pump)と弱い光(probe)に分け、原子のガスセル内で重ね合わせるようにしてprobe光を観測する。pump光の強度$I$は、飽和強度$I_{sat}$程度であるとする。
 
 飽和吸収分光の原理について、簡単のため２準位系($N_1, N_2$)で説明する。pump光は速度$v = (\omega - \omega_0)/k$の原子と作用し、原子を$N_2$状態へ励起する。これにより、$N_1$状態の原子の速度分布には次のような幅を持つ穴ができる。\cite{foot}
 
@@ -203,15 +203,15 @@ $u$は速度分布の中央の速度であり、原子の質量と温度に依�
 
 ここで、$\Gamma$は励起状態の寿命に依存する自然広がりである。レーザー周波数が共鳴周波数から充分($(\omega - \omega_0) \ll \Delta\omega_{hole}$)離れている時、pump光とprobe光は速度が異なる原子と相互作用するため互いに影響しない。しかしレーザー周波数が共鳴周波数付近($\omega \simeq \omega_0$)の時、二つのレーザー光はどちらも$v \simeq 0$の原子と相互作用する。すなわち、pump光の吸収によってprobe光を吸収できる$N_1$状態の原子数が減少するため、probe光の透過高強度が大きくなるのである。これを観測すると図\ref{fig:sas}右下のようにドップラー広がりの頂点に鋭い窪みができる。このくぼみは、ラムディップと呼ばれ、自然広がり程度のドップラーフリーな信号である。
 
-\subsubsection{クロスオーバー共振}
+\subsection{クロスオーバー共振}
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{images/cross-over_graph.png}
+\includegraphics[width=1\textwidth]{images/cross-over_graph.png}
 \caption{\label{fig:cross-over}クロスオーバー共振}
 \end{figure}
-実際の飽和吸収分光では、超微細構造によるエネルギー準位の分裂等によって、ドップラー吸収の範囲内で複数の共鳴周波数が存在する。この時、二つの共鳴周波数の間にクロスオーバーディップと呼ばれる新たなピークが現れる現象について説明する。原子が$E_1, E_2, E_3(E_1 < E_2 < E_3)$の３つのエネルギー準位を持ち、各状態の原子数$N_1(v), N_2(v), N_3(v)$と表す。この時、$N_1\leftrightarrow N_2$の遷移は$v = (\omega - \omega_{12})/k$の速度成分を持つ原子で、$N_1\leftrightarrow N_3$の遷移は$v = (\omega - \omega_{13})/k$の速度成分を持つ原子で生じる。前節の飽和吸収分光の原理によると、レーザー周波数$\omega = \omega_{12}, \omega_{13}$の時にラムディップが現れる。しかし、図\ref{fig:cross-over}にあるように、$\omega = \left(\omega_{12} + \omega_{13} \right) / 2$の時、pump光の$N_1\leftrightarrow N_2$遷移はprobe光の$N_1\leftrightarrow N_3$遷移を減少させ、pump光の$N_1\leftrightarrow N_3$遷移はprobe光の$N_1\leftrightarrow N_2$遷移を減少させる。したがって、$\omega = \left(\omega_{12} + \omega_{13} \right) / 2$でピークが観測されるのである。
+実際の飽和吸収分光では、超微細構造によるエネルギー準位の分裂によって、ドップラー吸収の範囲内で複数の共鳴周波数が存在する。この時、二つの共鳴周波数の間にクロスオーバーディップと呼ばれる新たなピークが現れる現象について説明する。原子が$E_1, E_2, E_3(E_1 < E_2 < E_3)$の３つのエネルギー準位を持ち、各状態の原子数$N_1(v), N_2(v), N_3(v)$と表す。この時、$N_1\leftrightarrow N_2$の遷移は$v = (\omega - \omega_{12})/k$の速度成分を持つ原子で、$N_1\leftrightarrow N_3$の遷移は$v = (\omega - \omega_{13})/k$の速度成分を持つ原子で生じる。前節の飽和吸収分光の原理によると、レーザー周波数$\omega = \omega_{12}, \omega_{13}$の時にラムディップが現れる。しかし、図\ref{fig:cross-over}にあるように、$\omega = \left(\omega_{12} + \omega_{13} \right) / 2$の時、pump光の$N_1\leftrightarrow N_2$遷移はprobe光の$N_1\leftrightarrow N_3$遷移を減少させ、pump光の$N_1\leftrightarrow N_3$遷移はprobe光の$N_1\leftrightarrow N_2$遷移を減少させる。したがって、$\omega = \left(\omega_{12} + \omega_{13} \right) / 2$でピークが観測されるのである。
 
-\subsubsection{変調移行分光（Modulation Transfer Spectroscopy）}
+\subsection{変調移行分光（Modulation Transfer Spectroscopy）}
 レーザーの周波数をロックするためには、飽和吸収信号を共鳴周波数の前後で正負が異なるようなエラー信号に変換してECDLにフィードバックする必要がある。エラー信号を得る技術はいくつか存在するが、その中でも変調移行分光法は急な信号勾配と高い周波数識別性を持つため、レーザーを狭い周波数にロックすることができる。なお、本節の議論は\cite{mt}\cite{mt2}を参考にしている。
 
 \begin{figure}
@@ -268,10 +268,10 @@ EOMに周波数$\omega_m$のRF信号を入れると、周波数$\omega$のpump�
 この信号を位相シフトしたRF信号と共にmixerで掛け合わせることで、sin項またはcos項に含まれるエラー信号を復調することができる。定数項と$\mathcal{O}(e^{2i\omega_m t})$はServo回路がローパスフィルターの働きもするため切り捨てられる。結果として、sin項、cos項共にエラー信号は離調$\Delta$に依存した奇関数となる。$\omega_m \leq \Gamma$の時、信号は共鳴周波数でゼロクロスする急な勾配を持った関数となり、レーザーのロックに理想的な信号となる。
 
 \clearpage
-\subsection{電磁場誘起透明化（Electromagnetically Induced Transparency）}
-電磁場誘起透明化(Electromagnetically induced transparency, 以下EIT)とは、3つ以上のエネルギー準位を持つ系に対してその吸収波長を持つ光を入射することで生じる量子干渉効果により、系の固有状態が見かけ上光の吸収や放出に関与しなくなる、すなわち物質が透明化する現象である。ここでは３準位原子のモデルと２本の光との相互作用を考え、原子がその光に対して透明化するまでの仕組みを説明する。なお、本節は参考文献\cite{eit-pertubation}\cite{eit-absorption}の説明を追う形で展開している。
-\subsubsection{運動方程式の記述}
-\begin{figure}
+\section{電磁場誘起透明化（Electromagnetically Induced Transparency）}
+電磁場誘起透明化(Electromagnetically induced transparency, 以下EIT)とは、3つ以上のエネルギー準位を持つ系に対してその吸収波長を持つ光を入射することで生じる量子干渉効果により、系の固有状態が見かけ上光の吸収や放出に関与しなくなる、すなわち物質が透明化する現象である。ここでは３準位原子のモデルと２本の光との相互作用を考え、原子がその光に対して透明化するまでの仕組みを説明する。なお、本節は参考文献\cite{eit-pertubation}\cite{eit-absorption}の説明を参考にしている。
+\subsection{運動方程式の記述}
+\begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.4\textwidth]{images/EIT_spectre.png}
 \caption{\label{fig:eit-spectre}3準位系のエネルギー図}
@@ -387,7 +387,7 @@ H &= H_0 + H_{int} \\
 \end{equation}
 とおいた。この方程式の解は、摂動論によって近似的に解かれる。
 
-\subsubsection{摂動理論を用いた解釈}
+\subsection{摂動理論を用いた解釈}
 ここからはprobe光が遥かに弱い($\Omega_p \ll \Omega_c$)ことを仮定し、摂動理論を適用して解を求めていく。定常状態の解は式(\ref{dot-rho-33})〜(\ref{dot-rho-11})において、時間微分を0とおくことで求められる。さらに
 \begin{equation}
 \begin{split}
@@ -449,7 +449,7 @@ H &= H_0 + H_{int} \\
 \end{equation}
 
 
-\subsubsection{吸収係数}
+\subsection{吸収係数}
 電磁気学によれば、電気感受率の虚部は誘電体による電場のエネルギーの吸収を表す。\cite{nagaoka-yosuke}したがって、probe光の吸収に関する電気感受率を求めることで、probe光の吸収を表すことができる。
 
 電場$E$によって作られる分極$P$は以下のように表される。
@@ -483,23 +483,23 @@ probe光の周波数$\omega_p$で振動する成分を考えると、
     &= \frac{\Gamma_2 \left( \Gamma_2\Gamma3 - 4\delta_p\delta_0 \right)}{8\left[ (\Gamma_2^2 + 4\delta_p^2)(\Gamma_3^2 + 4\delta_0^2) + 2|\Omega_c|^2 \right]} \\
 \end{split}
 \end{equation}
-となる。したがって、coupling光の離調がゼロ、すなわち$\delta_0 = \delta_p$とすると、probe光の離調と吸収の関係は図\ref{fig:absorption}のようになる。
+となる。coupling光の離調がゼロ、すなわち$\delta_0 = \delta_p$とすると、probe光の離調と吸収の関係は図\ref{fig:absorption}のようになる。
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.6\textwidth]{images/eit_absorption.png}
-\caption{\label{fig:absorption} ラダー型EIT信号　$\delta_c = 0$の時のprobe光のスペクトルを、$\Omega_c$の値ごとに示している。実線は密度行列の完全解を表しており、点線はドレスト状態による影響を受けた実際に観測されるスペクトルを表す　\cite{eit-absorption}より引用。}
+\includegraphics[width=0.8\textwidth]{images/eit_absorption.png}
+\caption{\label{fig:absorption} ラダー型EIT信号　$\delta_c = 0$の時のprobe光のスペクトルを、$\Omega_c$の値によって5通り示している。実線は密度行列の完全解を表しており、点線はドレスト状態による影響を受けた実際に観測されるスペクトルを表す　\cite{eit-absorption}より引用。}
 \end{figure}
 
 EITは、強いcoupling光によって原子のエネルギー準位がシフトし、新たな固有状態（ドレスト状態）が生まれることによって起こる。しかし、ドレスト状態の内のダークステートと呼ばれる光の吸収・放出が起こらない固有状態は、ドレスト状態の（への）自然崩壊との相互作用によって安定ではない。この影響によって、特に$\Omega_c$が$\Gamma_2$に比べて小さくなるほど、観測されるEITピークは小さくなる。
 
 \clearpage
-\section{実験系の構築}
+\chapter{実験系の構築}
 この章では、初めに我々が構築した実験系の概要についてまとめる。その後、それらの構成要素である外部共振器型半導体レーザー、周波数安定化システムについて詳細を述べる。電磁誘起透明化(EIT)信号の観測に関しては、次の章で詳細を述べる。
-\subsection{実験系の概要}
+\section{実験系の概要}
 % TODO:Rbセルのサイズ
-実験系の概要、及び光学系の写真を図\ref{fig:all},\ref{fig:all_real}に示す。ECDL1は$(\lambda \simeq 420)$nm、ECDL2は$(\lambda \simeq 1020)$nmである。各レーザーから出た光は、戻り光をカットするためアイソレーターに通されている。ECDL1の方のアイソレーターの実験スペックは、$\text{Transmission:} 80.4\%, \text{Isolation:} -34.4\text{dB}$であった。ECDL2の方のアイソレーターの実験スペックは、$\text{Transmission:} 35.8\%, \text{Isolation:} -15.4\text{dB}$であった。少し性能が悪いのは、アイソレーターの偏光が固定の製品だったため最適化できていないことが考えられる。
+実験系の概要、及び光学系の写真を図\ref{fig:all},\ref{fig:all_real}に示す。ECDL1は$(\lambda \simeq 420)$nm、ECDL2は$(\lambda \simeq 1020)$nmである。各レーザーから出た光は、戻り光をカットするためアイソレーターに通されている。ECDL1の方のアイソレーターの実験スペックは、$\text{Transmission:} 80.4\%, \text{Isolation:} -34.4\text{dB}$であった。ECDL2の方のアイソレーターの実験スペックは、$\text{Transmission:} 35.8\%, \text{Isolation:} -15.4\text{dB}$であった。少し性能が悪い理由として、アイソレーターが回転できない固定型の製品だったため、入射する光の偏光に対してアイソレーターの角度を最適化できていないことが考えられる。また、ECDL1の方のアイソレーターには、カットされた光が外部に放出される穴が開いており、目などにレーザー光が入らないよう遮光シートを被せた。この遮光シートを被せないと各実験で観測するprobe光に明らかにノイズが増えるので、アイソレーター内での光の干渉を防ぐために重要な効果があると考える。
 
-ECDL1から出た光は、アイソレーターを通った後、波長板とPBSによって周波数安定化のための変調移行分光の実験系へと光が分けられる。PBSを真っ直ぐ通過した光はさらに波長板とPBSによって分けられ、EIT信号観測実験の系と、波長系へと繋がる光ファイバーに向かっている。
+ECDL1から出た光は、アイソレーターを通った後、$\lambda/2$波長板とPBSによって周波数安定化のための変調移行分光の光学系へと光が分けられる。変調移行分光の光学系については、図\ref{fig:mt}に示した通りである。PBSを真っ直ぐ通過した光はさらに$\lambda/2$波長板とPBSによって分けられ、それぞれEIT信号観測実験の系と、波長系へと繋がる光ファイバーに向かっている。
 
 ECDL2から出た光は、アイソレーターを通った後、波長板とPBSによってEIT信号観測実験の系へと光が分けられ、残りの光は波長系へと繋がる光ファイバーに通されている。
 
@@ -515,7 +515,8 @@ ECDL2から出た光は、アイソレーターを通った後、波長板とPBS
 \caption{\label{fig:all_real}光学系の写真}
 \end{figure}
 
-\subsection{外部共振器型半導体レーザー(ECDL)}
+\clearpage
+\section{外部共振器型半導体レーザー(ECDL)}
 レーザー(Laser)は、「放射の誘導放出による光の増幅（Light amplification by stimulated emission of radiation)」の頭文字を集めて作った造語であることからもわかるように、半導体結晶から放出された光を誘導放出により増幅させた光源である。反射鏡等で光の一部をフィードバックし共振器を形成することで、特定の波長の光が選択的に増幅され「発振」する。\cite{yamamotomasashi}
 
 \begin{figure}[hbtp]
@@ -557,7 +558,7 @@ ECDL2から出た光は、アイソレーターを通った後、波長板とPBS
 また、ECDL2については研究室で既に作成されていたものを利用した。グレーティングの角度を調整することで、少なくとも1000nmから1036nmまで周波数を操作できることを確認した。性能評価の基準として、式\ref{rydberg-frequency}よりRbの$6P_{3/2}$から$26D_{5/2}$への励起に必要な波長が約1029.05nm、$6P_{3/2}$から$200D_{5/2}$への励起に必要な波長が約1010.57nmであるので、十分な波長であると言える。レーザー発振に必要な電流は1024nmの時、約26mAであった。こちらのLDは420nmのLDよりスペック上大きな電流に耐えられることができ、電源が最大の130mAの時、レーザーのパワーは57.5mWであった。図\ref{fig:p-i}に各レーザーの入力電流と出力のP-I特性を示す。
 
 
-\subsection{ECDL1の周波数安定化}
+\section{ECDL1の周波数安定化}
 ECDL1の周波数安定化には、変調移行分光を用いた。光学系の概要は図\ref{fig:mt}に示してある。ECDLから$\lambda / 2$波長板とPBSによって分けてきた光を、さらに$\lambda / 2$波長板とPBSによって強いpump光と弱いprobe光に分けた。pump光はおよそ1mW、probe光はおよそ0.3mW程度のパワーとした。pump光はEOMを通ってPBSで反射し、Rb蒸発セルでprobe光と重ね合わされる。probe光はセルを通過したのち、PBSを透過してそのままPDへと向かう。また、Rb蒸発セルには、温度を調節できるようにヒーターを巻きつけた。
 \begin{figure}
 \centering
@@ -572,40 +573,40 @@ ECDL1の周波数安定化には、変調移行分光を用いた。光学系の
 図\ref{fig:mt-lock}は、エラー信号をServo回路を通してフィードバックし、実際にレーザー周波数を$^{87}Rb$の$F=2$から$F^{'}=3$の飽和吸収信号にロックした時の様子である。PDで観測されたレーザーの電圧が飽和吸収信号のピークの電圧値に安定化されており、波長計で測定していたレーザーの周波数も713.28180THzにロックされていた。エラー信号の幅は飽和吸収信号の線幅と同じくらいであることからも、レーザー周波数を$\pm 5$MHz程度にロックできていると言える。
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{images/mt_lock.png}
+\includegraphics[width=0.7\textwidth]{images/mt_lock.png}
 \caption{\label{fig:mt-lock}レーザー周波数をロックしたときの波長計}
 \end{figure}
 
-\subsubsection{Servo回路}
+\subsection{Servo回路}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{images/servo.png}
-\includegraphics[width=0.6\textwidth]{images/servo_real.jpg}
+\includegraphics[width=0.8\textwidth]{images/servo_real.jpg}
 \caption{\label{fig:servo}上:420nmレーザーのロックに用いたServo回路の回路図　下:実際のServo回路の正面写真}
 \end{figure}
 
 実際にECDL1の周波数操作およびエラー信号のフィードバックに用いたServo回路を図\ref{fig:servo}に示した。Biasの可変抵抗を操作することで、PZT素子にかける電圧を連続的に操作することができる。Rampには5.5Vの三角波を入れ、PZT素子を周期的に動かすことでレーザー周波数を振ることができる。この際、可変抵抗によって三角波の振幅を操作、スイッチによってRamp電圧のon/offができる。Error inには変調移行分光などで得られたエラー信号を入れる。Error biasで信号のオフセットを微調整でき、Monitor outで調整後のエラー信号を観測できる。Polarityのスイッチはエラー信号の値を反転させることができる。その後、PZT Gainの可変抵抗によってエラー信号の大きさを調整でき、積分回路はローパスフィルターの役割を果たす。PZT outにてServo回路から出力された信号は、PZT Driverに接続され15倍に増幅されてPZT素子に送られる。この際、PZT Driverの入力電圧を制御するため、10Vのツェナーダイオードが追加されている。
 
 
-\subsection{ECDL2の周波数安定化}
-ECDL2は$6P_\frac{3}{2}$からRyderg準位への励起に使用するが、周波数安定化の参照として使える信号が無く、複数のRydberg準位への励起も予定している。そのため、柔軟にロックする周波数を設定することができる波長計ロックを採用した。波長計ロックとは、レーザーの周波数を波長計で計測し、得られたデジタル信号とプログラムで設定した任意の周波数との誤差を、電圧としてECDLにフィードバックする手法である。ECDL1同様Servo回路を通してフィードバック電圧の大きさを調整し、それをPZT Driverで増幅してPZT素子にフィードバックした。図\ref{fig:wave-lock}にロックした際の周波数と設定値との誤差の時間推移、図\ref{fig:wave-servo}に作成したServo回路の回路図を示す。周波数が、$\pm$ 4MHz程度に安定化されているのが読み取れる。
+\section{ECDL2の周波数安定化}
+ECDL2は$6P_{3/2}$からRyderg準位への励起に使用するが、周波数安定化の参照として使える信号が無く、複数のRydberg準位への励起も予定している。そのため、柔軟にロックする周波数を設定することができる波長計ロックを採用した。波長計ロックとは、レーザーの周波数を波長計で計測し、得られたデジタル信号とプログラムで設定した任意の周波数との誤差を、電圧としてECDLにフィードバックする手法である。ECDL1同様Servo回路を通してフィードバック電圧の大きさを調整し、それをPZT Driverで増幅してPZT素子にフィードバックした。図\ref{fig:wave-lock}にロックした際の周波数と設定値との誤差の時間推移、図\ref{fig:wave-servo}に作成したServo回路の回路図を示す。周波数が、$\pm$ 4MHz程度に安定化されているのが読み取れる。
 
-\begin{figure}
+\begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.6\textwidth]{images/wave_lock.jpg}
+\includegraphics[width=0.8\textwidth]{images/wave_lock.jpg}
 \caption{\label{fig:wave-lock}波長計ロックした際の計測周波数と設定値との誤差の時間推移}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.6\textwidth]{images/wave_servo.png}
+\includegraphics[width=0.8\textwidth]{images/wave_servo.png}
 \caption{\label{fig:wave-servo}ECDL2のServo回路}
 \end{figure}
 
 \clearpage
-\section{電磁誘起透明化信号の観測実験}
-\subsection{実験方法}
+\chapter{電磁誘起透明化信号の観測実験}
+\section{実験方法}
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{images/eit.png}
@@ -613,20 +614,26 @@ ECDL2は$6P_\frac{3}{2}$からRyderg準位への励起に使用するが、周�
 \end{figure}
 EIT信号を観測するために用いた光学系の概要を図\ref{fig:eit}に示す。各レーザーからPBSで光を分け、Rb蒸発セル内で重ね合わせた。この時、焦点距離200mmのレンズを置くことによってECDL1(=probe光)のレーザー径を小さくし、完全にECDL2(=coupling光)の光に重なるようにしている。レーザー径が小さくなることでprobe光の電場強度は半径の二乗に反比例して大きくなるため、レンズの焦点はセルよりも約8cmほど奥になるような位置に置いている。また、Rb蒸発セルには飽和吸収信号の観測実験と同様に温度を調節するためのヒーターを巻きつけた。実験中のセルの温度は約100℃から120℃で、この範囲においてEIT信号はセルの温度が高いほど強度も大きかった。実験の操作としては、coupling光を計算によって求めた特定の周波数付近に波長計ロックし、ECDL1のPZT素子に三角波電圧をかけることによって周波数を振ったprobe光の電圧をフォトダイオードで観測した。
 
-\subsection{信号の観測}
+\section{信号の観測}
 遷移双極子モーメント及びラビ周波数は${n^*}^{-3/2}$に比例するため\cite{yuma}、実効主量子数が小さいほどEIT信号のピークの強度は大きくなる。まずはECDL2のスペックで最もピークが見やすいと考えられる$26D_{5/2}$への励起周波数にcoupling光をロックし観測を試みた。EIT信号の観測にはラビ周波数$\Omega_c$が$\Omega_p$に比べて大きいことが重要であるため、coupling光の強度は周波数が合わせられる最大強度とした。（周波数によって、約25mWから35mWの間であった。）
 
-probe光は当初はなるべく小さい20$\mu$W程度の光を入れていたが、いくらcoupling光の周波数を変えてもEIT信号は観測されなかった。その後、probe光を600$\mu$W程度までパワーを上げることによってEIT信号を観測することに成功した。先行研究\cite{optimize}が示すように、probe光が弱すぎてもEIT信号が小さくなり観測できないことがわかった。ただし、パワーを上げるとECDLの発振周波数が共鳴周波数に合わなくなってしまうため、連続的にパワーを上げることが難しく、今回はEITピーク強度の最適化は行っていない。試しにprobe光強度を14.5mWまで上げたが、EIT信号は600$\mu$Wの時と同じくらいのS/N比ではっきりと見えていたため、EIT信号を最大化するprobe光のパワーは数mWから数十mWオーダーということも考えられる。
+probe光は当初はなるべく小さい20$\mu$W程度の光を入れていたが、いくらcoupling光の周波数を変えてもEIT信号は観測されなかった。その後、probe光を600$\mu$W程度までパワーを上げることによってEIT信号を観測することに成功した。先行研究\cite{optimize}が示すように、probe光が弱すぎてもEIT信号が小さくなり観測できないことがわかった。ただし、パワーを上げるとECDLの発振周波数が共鳴周波数に合わなくなってしまうため、連続的にパワーを上げることが難しく、今回はEITピーク強度の最適化は行っていない。
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\textwidth]{images/eit26.png}
+\caption{\label{fig:eit26}n=26のEIT信号(85Rbの共鳴周波数付近）　青は飽和吸収信号、赤はEIT信号、黄色はEIT信号のドップラー吸収にフィッティングしたガウス関数}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\textwidth]{images/eit87.png}
+\caption{\label{fig:eit87}n=26のEIT信号（87Rbの共鳴周波数付近）青は飽和吸収信号、赤はEIT信号}
+\end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth]{images/eit26.png}
-\caption{\label{fig:eit26}n=26のEIT信号(85Rbの共鳴周波数付近）　青は飽和吸収信号、赤はEIT信号、黄色はEIT信号のドップラー吸収にフィッティングしたガウス関数}
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[width=0.6\textwidth]{images/eit87.png}
-\caption{\label{fig:eit87}n=26のEIT信号（87Rbの共鳴周波数付近）青は飽和吸収信号、赤はEIT信号}
+\includegraphics[width=0.7\textwidth]{images/eit_high.jpg}
+\caption{\label{fig:eit-high}probe光強度14.5mWの時のオシロスコープ　CH1は飽和吸収信号、CH4はEIT信号}
 \end{figure}
 
 \begin{table}[hbtp]
@@ -636,18 +643,19 @@ probe光は当初はなるべく小さい20$\mu$W程度の光を入れていた�
   \begin{tabular}{lcr}
     \hline
     coupling光の周波数[THz] & 計算値[THz] & 誤差[THz]  \\
-    \hline \hline
+    \hline
     291.3283122  & 291.3288723$\pm 0.0005996$ & -0.00056  \\
     \hline
   \end{tabular}
 \end{table}
-図\ref{fig:eit26},図\ref{fig:eit87}に観測されたEIT信号を、表\ref{table:eit26}にその時のcoupling光の周波数と計算によって求めた周波数を示す。EIT信号のディップが、85Rbの$F^{'} = \text{co}(4,3)$の吸収線と同じくらいの周波数で表れている。この時、同じcoupling周波数で、87Rbの$F^{'} = 3$に相当する周波数でもディップが確認された。EIT信号の半値幅は飽和吸収分光のディップから推定するに、$35 \sim 40$MHzである。我々は$6P_{3/2}$を中間準位としているので、$\Gamma_2 = 2\pi \times 1.4$MHzに対し、EIT信号の線幅はおよそ$25\Gamma_2 \sim 28.6\Gamma_2$である。EITの線幅が自然幅よりも太い要因の一つとして考えられるのは、図\ref{fig:absorption}にも示したように$\Omega_c$が$\Gamma_2$に比べて大きいことによるドレスト状態のエネルギー準位のシフトが大きいためと考える。
+図\ref{fig:eit26},図\ref{fig:eit87}に観測されたEIT信号を、表\ref{table:eit26}にその時のcoupling光の周波数と\ref{sec:rydberg}の計算によって求めた周波数を示す。EIT信号のディップが、85Rbの$F^{'} = \text{co}(4,3)$の吸収線と同じくらいの周波数で表れている。この時、同じcoupling周波数で、87Rbの$F^{'} = 3$に相当する周波数でもディップが確認された。EIT信号の半値幅は飽和吸収分光のディップから推定するに、$35 \sim 40$MHzである。我々は$6P_{3/2}$を中間準位としているので、$\Gamma_2 = 2\pi \times 1.4$MHzに対し、EIT信号の線幅はおよそ$25\Gamma_2 \sim 28.6\Gamma_2$である。EITの線幅が自然幅よりも太い要因の一つとして考えられるのは、図\ref{fig:absorption}にも示したように$\Omega_c$が$\Gamma_2$に比べて大きいことによるドレスト状態のエネルギー準位のシフトが大きいためと考える。
 
 coupling光の周波数に関しては、計算によって求めた値の中央値より560MHzとかなり離れているが、計算値のエラーバーの範囲内である。560MHzも計算値と離れている要因としては、計算に用いた量子欠損は85Rbの値なのに対し、波数$k_{\text{lim}}$と$k_{6P}$の値は参照した文献\cite{nist}(NIST Atomic Spectra Database Levels Data)が同位体シフトを含んだ値だった可能性がある。また、coupling光を$\pm 100$MHzほど離れたところにロックすると、EIT信号はその分左右に離れた場所に観測された。このことから、電磁誘起透明化は本来の共鳴周波数から100MHz程度離れた場所でもドップラー効果によって観測できると言える。
 
+また、試しにprobe光強度を14.5mWまで上げた時のオシロスコープの様子を図\ref{fig:eit-high}に示す。レンズの位置や温度などを探りながらの観測だったため図\ref{fig:eit26}とパワーの大きさのみの純粋な比較とは言えないが、probe光がcoupling光(25 $\sim 35$mW)と同じオーダーのパワーにも関わらず、はっきりとティップが見えている。線幅に関しては、飽和吸収の$F^{'} = 4$と$F^{'} = \text{co}(4,3)$のディップの間隔が19.63MHzなのを踏まえてグラフのメモリから読み取るに、約25MHzである。さらに、中央の大きなディップの左右に別のディップが現れている。左側のディップは中央のディップから約50MHz、右側のディップは中央のディップから約20MHz離れている。85Rbの$6P_{3/2}$の超微細構造は、$F^{'} = 4$と$F^{'} = 3$の間が39.26MHz、$F^{'} = 3$と$F^{'} = 2$の間が20.667MHzなので\cite{hyperfine}、それぞれ左から$F^{'} = 4,3,2$を中間準位としたRydberg励起のEIT信号の可能性が考えられる。
 
-\subsection{異なるRydberg準位への励起}
-続いて、より主量子数の大きいRydberg準位へ励起した際のEIT信号の観測を試みた。n=26の時の観測結果を踏まえて、\ref{sec:rydberg}の計算によって求められた各周波数から560MHzを引いた周波数にcoupling光をロックしたところ、図\ref{fig:eitn}に示すような信号が得られた。表\ref{table:eit}は各主量子数に励起した際のcoupling光の周波数である。いずれのグラフでも、n=26の時と同様に85Rbの$F^{'} = \text{co}(4,3)$の吸収線と同じくらいの周波数でEITピークが見られている。なお、n=45に関してはEIT信号が小さく、実際の実験でcoupling光を遮蔽したりしても信号を読み取るのは難しかった。EIT信号の大きさはnが大きくなるほど急激に小さくなっている。一方でEIT信号の線幅に関しては、n=30とn=40のグラフを比較しても、少なくとも数十MHzといった読み取れるほどの変化はないと言える。$\Omega_c$は${n^*}^{-3/2}$に比例するので、図\ref{fig:absorption}によれば$\Omega_c$が小さくなるほどEITピークの線幅も狭くなっていくはずであるが、今回の実験ではそのような傾向は見られなかった。
+\section{異なるRydberg準位への励起}
+続いて、より主量子数の大きいRydberg準位へ励起した際のEIT信号の観測を試みた。n=26の時の観測結果を踏まえて、\ref{sec:rydberg}節の計算によって求められた各周波数から560MHzを引いた周波数にcoupling光をロックしたところ、図\ref{fig:eitn}に示すような信号が得られた。表\ref{table:eit}は各主量子数に励起した際のcoupling光の周波数である。いずれのグラフでも、n=26の時と同様に85Rbの$F^{'} = \text{co}(4,3)$の吸収線と同じくらいの周波数でEITピークが見られている。なお、n=45に関してはEIT信号が小さく、実際の実験でcoupling光を遮蔽したりしても信号を読み取るのは難しかった。EIT信号の大きさはnが大きくなるほど急激に小さくなっている。一方でEIT信号の線幅に関しては、n=30とn=40のグラフを比較しても、少なくとも数十MHzといった読み取れるほどの変化はないと言える。$\Omega_c$は${n^*}^{-3/2}$に比例するので、図\ref{fig:absorption}によれば$\Omega_c$が小さくなるほどEITピークの線幅も狭くなっていくはずであるが、今回の実験ではそのような傾向は見られなかった。
 \begin{table}[hbtp]
   \caption{EIT信号が観測された時のcoupling光の周波数}
   \label{table:eit}
@@ -670,11 +678,15 @@ coupling光の周波数に関しては、計算によって求めた値の中央
 \includegraphics[width=0.6\textwidth]{images/eit35.png}
 \includegraphics[width=0.6\textwidth]{images/eit40.png}
 \includegraphics[width=0.6\textwidth]{images/eit45.png}
-\caption{\label{fig:eitn}上から順番に、飽和吸収信号とn=30,35,40のEIT信号}
+\caption{\label{fig:eitn}上から順番に、飽和吸収信号とn=30,35,40,45のEIT信号}
 \end{figure}
 
 \clearpage
-\section{まとめ}
+\chapter{まとめ}
+本研究では、field ionizationを行うためのRydberg励起用レーザーシステムの開発を目的とし、レーザーの開発からRydberg励起が成功しているかを確認するための電磁誘起透明化信号の観測までを行った。レーザーには、ARコート付きのLD素子を利用した外部共振器型半導体レーザーを作成した。ECDL1はRbの基底状態から$6P_{3/2}$への励起数波数、ECDL2は$6P_{3/2}$から$26D_{5/2}$以上のRydberg準位への励起周波数に対応していることを確認した。ECDL1の周波数安定化には変調移行分光法を用いて、周波数を$\pm5$MHz以内に安定化することができた。ECDL2の周波数安定化には波長系ロックを用いて、周波数を$\pm4$MHz以内に安定化することができた。電磁誘起透明化信号は、$26D_{5/2}$から$40D_{5/2}$までの観測に成功した。周波数が大きくなると信号強度が急激に小さくなるため、それ以上の主量子数のEIT信号を観測することはできなかったが、Rydberg励起に必要なcoupling光の周波数を少なくともレーザーの線幅である$\pm5$MHz以内で精密に計算できるようになったため、今後のEIT信号の観測が格段に簡単になった。
+
+一方で、冒頭で述べたようにfield ionizationを行うには、100V/cmの電場を用意しても$n^*=$42.04482のRydberg原子が必要である。したがって今後の展望としては、よりEIT信号の強度を高めるための実験系の改良や最適化が挙げられる。probe光の強度に関しては、0.6mWと14.5mWといった非常に離れた値での観測しか行っていないため、セルの温度も含めまだまだ最適化の余地があるといえる。また、copuling光をテーパードアンプなどで増幅したり、アイソレーターをより透過率の高いものに変更したりすることで、coupling光の電場強度が上がり、ラビ周波数$\Omega_c$を大きくすることができる。これらの改良を加えることで、field ionizationに十分な主量子数のRydberg状態励起用レーザーが用意できると考える。
+
 
 
 
